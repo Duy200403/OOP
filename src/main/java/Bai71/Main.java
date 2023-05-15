@@ -1,6 +1,6 @@
 package Bai71;
 
-import java.util.Date;
+/*import java.util.Date;
 
 public class Main {
     public static void main(String[] args) {
@@ -38,6 +38,51 @@ public class Main {
         visit4.setServiceExpense(90);
         visit4.setProductExpense(40);
         System.out.println("Total expense for " + visit4.getName() + ": $" + visit4.getTotalExpense());
+    }
+}*/
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class Main {
+    public static void main(String[] args) {
+        // Create customers
+        Customer customer1 = new Customer("John");
+        customer1.setMember(true);
+        customer1.setMemberType("Cao cấp");
+
+        Customer customer2 = new Customer("Jane");
+        customer2.setMember(true);
+        customer2.setMemberType("Vàng");
+
+        Customer customer3 = new Customer("Alice");
+        customer3.setMember(true);
+        customer3.setMemberType("Bạc");
+
+        Customer customer4 = new Customer("Bob");
+
+        // Create visits
+        Date currentDate = new Date();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+
+        Visit visit1 = new Visit(customer1, currentDate);
+        visit1.setServiceExpense(100);
+        visit1.setProductExpense(50);
+        System.out.println("Total expense for " + visit1.getName() + " on " + dateFormat.format(currentDate) + ": $" + visit1.getTotalExpense());
+
+        Visit visit2 = new Visit(customer2, currentDate);
+        visit2.setServiceExpense(80);
+        visit2.setProductExpense(30);
+        System.out.println("Total expense for " + visit2.getName() + " on " + dateFormat.format(currentDate) + ": $" + visit2.getTotalExpense());
+
+        Visit visit3 = new Visit(customer3, currentDate);
+        visit3.setServiceExpense(120);
+        visit3.setProductExpense(70);
+        System.out.println("Total expense for " + visit3.getName() + " on " + dateFormat.format(currentDate) + ": $" + visit3.getTotalExpense());
+
+        Visit visit4 = new Visit(customer4, currentDate);
+        visit4.setServiceExpense(90);
+        visit4.setProductExpense(40);
+        System.out.println("Total expense for " + visit4.getName() + " on " + dateFormat.format(currentDate) + ": $" + visit4.getTotalExpense());
     }
 }
 
